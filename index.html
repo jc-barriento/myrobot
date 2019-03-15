@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 5</title>
+<title>Robot Machine 6</title>
 </head>
 
 <body>
@@ -113,6 +113,17 @@ window.onload = function startContinuousArtyom() {
             }
         }
     ]);
+    
+// Comandos Capital
+    
+artyom.addCommands([
+        {
+            indexes: ["qual é a capital do Brasil", "capital do brasil"],
+            action: function (i) {
+                artyom.say("A capital do Brasil é Brasília");
+            }
+        }
+    ]);    
 
 // Comandos Abrir Janelas
 
@@ -121,6 +132,12 @@ window.onload = function startContinuousArtyom() {
         if (wildcard == "facebook") {
             abrirExterno = window.open("https://www.facebook.com", "popup");
         }
+        if (wildcard == "youtube") {
+            abrirExterno = window.open("https://www.youtube.com", "popup");
+        }
+        if (wildcard == "canal do gustavo") {
+            abrirExterno = window.open("https://www.youtube.com/channel/UClt9uNN7TOtKXo-FkdOAkIg", "popup");
+        }                
         if (wildcard == "e-mail") {
             abrirExterno = window.open("https://www.gmail.com", "popup");
         }
@@ -170,6 +187,9 @@ window.onload = function startContinuousArtyom() {
             abrirExterno.close();
         }
         if (wildcard == "facebook") {
+            abrirExterno.close();
+        }
+        if (wildcard == "youtube") {
             abrirExterno.close();
         }
         if (wildcard == "e-mail") {
