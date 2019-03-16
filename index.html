@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 10</title>
+<title>Robot Machine 11</title>
 </head>
 
 <body>
@@ -291,10 +291,11 @@ artyom.addCommands([
 
 
 artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
+    var spam = document.getelementbyid("txtout")
     if(isFinal){
-        console.log("Final recognized text: " + recognized);
+        spam.innerHTML = recognized;
     }else{
-        console.log(recognized);
+        spam.innerHTML = '.';
     }
 });
 
@@ -310,18 +311,9 @@ artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
   <table border="0" width="79%" height="252">
     <tr>
       <td width="100%" height="248">
+      <span id="txtout">
       
-<script>
-
-fetch('http://www.jm-digital.com.br')
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
-  });
-    
-</script)    
+      </span>
 
       
       </td>
