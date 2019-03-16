@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 14</title>
+<title>Robot Machine 16</title>
 </head>
 
 <body>
@@ -53,6 +53,15 @@ window.onload = function startContinuousArtyom() {
 
     });
 
+  // Imprimir texto falado
+  artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
+    var spam = document.getElementById("txtout")
+    if(isFinal){
+        spam.innerHTML = recognized;
+    }else{
+        spam.innerHTML = spam.innerHTML+'.';
+    }
+   });
 
     artyom.on(['reiniciar *'], true).then(function (i, wildcard) {
         if (wildcard == "sistema") {
@@ -86,7 +95,7 @@ window.onload = function startContinuousArtyom() {
             });
         }
     });
-
+  
 
     artyom.addCommands([
         {
@@ -305,16 +314,6 @@ artyom.addCommands([
 
     });
 
-
-
-artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
-    var spam = document.getElementById("txtout")
-    if(isFinal){
-        spam.innerHTML = recognized;
-    }else{
-        spam.innerHTML = spam.innerHTML+'.';
-    }
-});
 
 
 
