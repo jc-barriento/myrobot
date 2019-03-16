@@ -3,7 +3,7 @@
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
 <script type="text/javascript" src='http://okfnlabs.org/wikipediajs/wikipedia.js'></script>  
-<title>Robot Machine 61</title>
+<title>Robot Machine 65</title>
 </head>
 
 <body>
@@ -104,10 +104,11 @@ window.onload = function startContinuousArtyom() {
 
    // Pesquisa Wikipedia
    artyom.on(['procurar *'], true).then(function (i, wildcard) {        
-           spam.innerHTML = "procurar: "+wildcard;
+           var urlwiki = 'http://en.wikipedia.org/wiki/'+wildcard;
+           spam.innerHTML = urlwiki;
            var info = WIKIPEDIA.getData('http://en.wikipedia.org/wiki/'+wildcard);
-           alert(info.summary.title);
-           spam.innerHTML = info;        
+           --alert(info.summary.title);
+           --spam.innerHTML = info;        
     });
   
   //var info = WIKIPEDIA.getData('http://en.wikipedia.org/wiki/Invasion_of_Normandy');
