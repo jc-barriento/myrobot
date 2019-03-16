@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 20</title>
+<title>Robot Machine 21</title>
 </head>
 
 <body>
@@ -95,7 +95,16 @@ window.onload = function startContinuousArtyom() {
             });
         }
     });
-  
+
+  artyom.addCommands([
+        {
+            indexes: ["Teste", "xxx"],
+            action: function (i) {
+                var speek = "diga alguma coisa"
+                artyom.say(speek);
+            }
+        }
+    ]);
 
     artyom.addCommands([
         {
@@ -146,13 +155,12 @@ artyom.addCommands([
         {
             indexes: ["qual é a capital do Brasil", "capital do brasil"],
             action: function (i) {
-                artyom.sayRandom(["A capital do Brasil é Brasília","Se você já sabe porque esta me perguntando"]);
+                artyom.sayRandom(["A capital do Brasil é Brasília","Se você já sabe porque está me perguntando"]);
             }
         }
     ]);    
 
 // Comandos Abrir Janelas
-
 
     artyom.on(['abrir *'], true).then(function (i, wildcard) {
         if (wildcard == "facebook") {
