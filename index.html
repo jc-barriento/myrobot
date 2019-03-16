@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 45</title>
+<title>Robot Machine 50</title>
 </head>
 
 <body>
@@ -13,9 +13,9 @@
     <tr>
       <td width="100%" height="248">
         <p><font face="Verdana" size="4">        
-        //<span id="txtout">        
-        //aaaa
-        //</span>
+        <span id="txtout">        
+        aaaa
+        </span>
       </font></p>  
       
       </td>
@@ -71,6 +71,7 @@ window.onload = function startContinuousArtyom() {
     });
     artyom.on(['iniciar *'], true).then(function (i, wildcard) {
         if (wildcard == "sistema") {
+            spam.innerHTML = "Iniciar sistema.";
             artyom.say("Iniciar sistema.", {
                 onStart: function (i) {
                     window.location.reload();
@@ -78,6 +79,7 @@ window.onload = function startContinuousArtyom() {
             });
         }
         if (wildcard == "memória") {
+            spam.innerHTML = "Iniciar Memória.";
             artyom.say("Iniciar Memória.", {
                 onStart: function (i) {
                     artyom.restart();
@@ -86,14 +88,15 @@ window.onload = function startContinuousArtyom() {
         }
     });
 
-  //artyom.addCommands([
-  //      {
-  //          indexes: ["teste"],
-  //          action: function (i) {
-  //              artyom.say("comando teste");
-  //          }
-  //      }
-  //  ]);
+  artyom.addCommands([
+        {
+            indexes: ["teste"],
+            action: function (i) {
+              spam.innerHTML = "comando teste.";
+              artyom.say("comando teste");
+            }
+        }
+    ]);
 
     artyom.addCommands([
         {
@@ -243,6 +246,7 @@ artyom.addCommands([
         {
             indexes: ["que horas são"],
             action: function (i) {
+                spam.innerHTML = "que horas são?";
                 date = new Date();
                 horas = date.getHours();
                 minutos = date.getMinutes();
