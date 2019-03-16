@@ -3,7 +3,7 @@
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
 <script type="text/javascript" src='http://okfnlabs.org/wikipediajs/wikipedia.js'></script>  
-<title>Robot Machine 74</title>
+<title>Robot Machine 80</title>
 </head>
 
 <body>
@@ -39,7 +39,9 @@ var spam = document.getElementById("txtout")
 var spamtxt = document.getElementById("txt")  
   
 window.onload = function startContinuousArtyom() {
+    artyom.fatality();
     spam.innerHTML = "TINA Inicializada com sucesso.";
+    setTimeout(function(){
     artyom.initialize({
         lang: "pt-BR",
         continuous: true,
@@ -63,6 +65,8 @@ window.onload = function startContinuousArtyom() {
         }
 
     });
+      
+    },250);  
 
     artyom.on(['reiniciar *'], true).then(function (i, wildcard) {
         if (wildcard == "sistema") {
