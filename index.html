@@ -2,11 +2,25 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 11</title>
+<title>Robot Machine 12</title>
 </head>
 
 <body>
 
+<div align="center">
+  <center>
+  <table border="0" width="79%" height="252">
+    <tr>
+      <td width="100%" height="248">
+      <span id="txtout">     
+      </span>
+      
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>    
+    
 <script>
 
 const artyom = new Artyom();
@@ -291,11 +305,11 @@ artyom.addCommands([
 
 
 artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
-    var spam = document.getelementbyid("txtout")
+    var spam = document.getElementById("txtout")
     if(isFinal){
         spam.innerHTML = recognized;
     }else{
-        spam.innerHTML = '.';
+        spam.innerHTML = spam.innerHTML+'.';
     }
 });
 
@@ -306,21 +320,6 @@ artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
     
 </script>
 
-<div align="center">
-  <center>
-  <table border="0" width="79%" height="252">
-    <tr>
-      <td width="100%" height="248">
-      <span id="txtout">
-      
-      </span>
-
-      
-      </td>
-    </tr>
-  </table>
-  </center>
-</div>
 
 </body>
 
