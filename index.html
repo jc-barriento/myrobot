@@ -3,7 +3,7 @@
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
 <script type="text/javascript" src='http://okfnlabs.org/wikipediajs/wikipedia.js'></script>  
-<title>Robot Machine 73</title>
+<title>Robot Machine 74</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
         <br>
         <br>          
         <span id="txt">        
-        txt
+        ----
         </span>          
           
       </font></p>        
@@ -342,13 +342,13 @@ artyom.addCommands([
 
 
   // Imprimir texto falado
-  artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
-    if(isFinal){
-        spamtxt.innerHTML = recognized;
-    }else{
-        spamtxt.innerHTML = spamtxt.innerHTML+'.';
-    }
-   });
+  //artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
+  //  if(isFinal){
+  //      spamtxt.innerHTML = recognized;
+  //  }else{
+  //      spamtxt.innerHTML = spamtxt.innerHTML+'.';
+  //  }
+  // });
 
 
 };
