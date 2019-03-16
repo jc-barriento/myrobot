@@ -290,7 +290,13 @@ artyom.addCommands([
 
 
 
-
+artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
+    if(isFinal){
+        console.log("Final recognized text: " + recognized);
+    }else{
+        console.log(recognized);
+    }
+});
 
 
 
