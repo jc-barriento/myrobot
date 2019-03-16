@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 16</title>
+<title>Robot Machine 20</title>
 </head>
 
 <body>
@@ -54,14 +54,14 @@ window.onload = function startContinuousArtyom() {
     });
 
   // Imprimir texto falado
-  artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
-    var spam = document.getElementById("txtout")
-    if(isFinal){
-        spam.innerHTML = recognized;
-    }else{
-        spam.innerHTML = spam.innerHTML+'.';
-    }
-   });
+  //artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
+  //  var spam = document.getElementById("txtout")
+  //  if(isFinal){
+  //      spam.innerHTML = recognized;
+  //  }else{
+  //      spam.innerHTML = spam.innerHTML+'.';
+  //  }
+  // });
 
     artyom.on(['reiniciar *'], true).then(function (i, wildcard) {
         if (wildcard == "sistema") {
@@ -146,7 +146,7 @@ artyom.addCommands([
         {
             indexes: ["qual é a capital do Brasil", "capital do brasil"],
             action: function (i) {
-                artyom.say("A capital do Brasil é Brasília");
+                artyom.sayRandom(["A capital do Brasil é Brasília","Se você já sabe porque esta me perguntando"]);
             }
         }
     ]);    
@@ -156,19 +156,19 @@ artyom.addCommands([
 
     artyom.on(['abrir *'], true).then(function (i, wildcard) {
         if (wildcard == "facebook") {
-            abrirExterno = window.open("https://www.facebook.com", "popup");
+            abrirExterno = window.open("https://www.facebook.com", "_blank");
         }
         if (wildcard == "youtube") {
-            abrirExterno = window.open("https://www.youtube.com", "popup");
+            abrirExterno = window.open("https://www.youtube.com", "_blank");
         }
         if (wildcard == "gustavo") {
-            abrirExterno = window.open("https://www.youtube.com/channel/UClt9uNN7TOtKXo-FkdOAkIg", "popup");
+            abrirExterno = window.open("https://www.youtube.com/channel/UClt9uNN7TOtKXo-FkdOAkIg", "_blank");
         }                
         if (wildcard == "e-mail") {
-            abrirExterno = window.open("https://email.uol.com.br/login", "popup");
+            abrirExterno = window.open("https://email.uol.com.br/login", "_blank");
         }
         if (wildcard == "gmail") {
-            abrirExterno = window.open("https://www.gmail.com", "popup");
+            abrirExterno = window.open("https://www.gmail.com", "_blank");
         }
         if (wildcard == "menu") {
             document.getElementById("menu-open").checked = true;
