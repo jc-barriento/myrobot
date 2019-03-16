@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 32</title>
+<title>Robot Machine 33</title>
 </head>
 
 <body>
@@ -27,15 +27,13 @@
 <script>
 
 const artyom = new Artyom();
-
-var txtspeak = "diga alguma coisa";
  
 window.onload = function startContinuousArtyom() {
     artyom.initialize({
         lang: "pt-BR",
         continuous: true,
         executionKeyword: "Tina",
-        debug: false,
+        debug: true,
         mode: "quick",
         soundex: true,
         listen: true
