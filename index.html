@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 30</title>
+<title>Robot Machine 31</title>
 </head>
 
 <body>
@@ -27,6 +27,8 @@
 <script>
 
 const artyom = new Artyom();
+
+var txtspeak = "diga alguma coisa";
  
 window.onload = function startContinuousArtyom() {
     artyom.initialize({
@@ -90,8 +92,7 @@ window.onload = function startContinuousArtyom() {
         {
             indexes: ["teste"],
             action: function (i) {
-                var speek = "diga alguma coisa";
-                artyom.say(speek);
+                artyom.say(txtspeak);
             }
         }
     ]);
