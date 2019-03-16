@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 25</title>
+<title>Robot Machine 26</title>
 </head>
 
 <body>
@@ -27,34 +27,42 @@
 <script>
 
 const artyom = new Artyom();
-    
-window.onload = function startContinuousArtyom() {
-    artyom.initialize({
+
+artyom.initialize({
         lang: "pt-BR",
         continuous: true,
-        executionKeyword: "Tina",
-        debug: true,
-        mode: "quick",
-        soundex: true,
+        //executionKeyword: "Tina",
+        debug: false,
+        //mode: "quick",
+        //soundex: true,
         listen: true
-    }).then(function () {
-        artyom.say("Carregando arquivos.");
-        artyom.say("TINA Inicializada com sucesso", artyom.getVoices());
-
-        var currentTime = new Date();
-        var hours = currentTime.getHours();
-        if ((hours >= 0 && hours < 4) || (hours >= 18 && hours <= 23)) {
-            artyom.say("Boa noite Senhor! Em que posso ajudar?");
-        } else if (hours >= 4 && hours < 12) {
-            artyom.say("Bom dia Senhor! Em que posso ajudar?");
-        } else if (hours >= 12 && hours < 18) {
-            artyom.say("Boa tarde Senhor! Em que posso ajudar?");
-        }
-
-    });
-
-   window.location.reload();
+    });  
   
+//window.onload = function startContinuousArtyom() {
+//    artyom.initialize({
+//        lang: "pt-BR",
+//        continuous: true,
+//        executionKeyword: "Tina",
+//        debug: true,
+//        mode: "quick",
+//        soundex: true,
+//        listen: true
+//    }).then(function () {
+//        artyom.say("Carregando arquivos.");
+//        artyom.say("TINA Inicializada com sucesso", artyom.getVoices());
+
+//        var currentTime = new Date();
+//        var hours = currentTime.getHours();
+//        if ((hours >= 0 && hours < 4) || (hours >= 18 && hours <= 23)) {
+//            artyom.say("Boa noite Senhor! Em que posso ajudar?");
+//        } else if (hours >= 4 && hours < 12) {
+//            artyom.say("Bom dia Senhor! Em que posso ajudar?");
+//        } else if (hours >= 12 && hours < 18) {
+//            artyom.say("Boa tarde Senhor! Em que posso ajudar?");
+//        }
+
+//    });
+
     artyom.on(['reiniciar *'], true).then(function (i, wildcard) {
         if (wildcard == "sistema") {
             artyom.say("Reiniciando sistema.", {
