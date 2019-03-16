@@ -2,7 +2,7 @@
 
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-<title>Robot Machine 29</title>
+<title>Robot Machine 30</title>
 </head>
 
 <body>
@@ -32,7 +32,10 @@ window.onload = function startContinuousArtyom() {
     artyom.initialize({
         lang: "pt-BR",
         continuous: true,
+        executionKeyword: "Tina",
         debug: false,
+        mode: "quick",
+        soundex: true,
         listen: true
     }).then(function () {
         artyom.say("Carregando arquivos.");
