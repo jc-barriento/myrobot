@@ -3,7 +3,7 @@
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
 <script type="text/javascript" src='http://okfnlabs.org/wikipediajs/wikipedia.js'></script>  
-<title>Robot Machine 85</title>
+<title>Robot Machine 86</title>
 </head>
 
 <body>
@@ -43,7 +43,7 @@ xmlhttp = new XMLHttpRequest();
 xmlhttp.open("GET", "http://whateverorigin.org/get?url=" + encodeURIComponent("http://www.jm-digital.com.br/"), true);
 xmlhttp.send();
   
-spamtxt.innerHTML = xmlhttp.responseText
+spamtxt.innerHTML = xmlhttp.responseText;
   
 window.onload = function startContinuousArtyom() {
     artyom.fatality();
