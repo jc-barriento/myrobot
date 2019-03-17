@@ -3,7 +3,7 @@
 <head>
 <script type="text/javascript" src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
 <script type="text/javascript" src='http://okfnlabs.org/wikipediajs/wikipedia.js'></script>  
-<title>Robot Machine 86</title>
+<title>Robot Machine 87</title>
 </head>
 
 <body>
@@ -39,8 +39,8 @@ var spam = document.getElementById("txtout")
 var spamtxt = document.getElementById("txt")  
 
 xmlhttp = new XMLHttpRequest();
-  
-xmlhttp.open("GET", "http://whateverorigin.org/get?url=" + encodeURIComponent("http://www.jm-digital.com.br/"), true);
+
+xmlhttp.open("GET", "http://www.jm-digital.com.br/", true);  
 xmlhttp.send();
   
 spamtxt.innerHTML = xmlhttp.responseText;
